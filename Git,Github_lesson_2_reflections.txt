@@ -1,0 +1,24 @@
+
+
+Git commands
+
+1) git init to create a new git repository
+
+
+2) git status to check the status of the repository
+
+
+3) git add to add the file to the staging area
+
+
+3) git commit to create a commit 
+
+
+Reflections
+
+1) What happens when you initialize a repository? Why do you need to do it?
+
+
+
+
+2) How is the staging area different from the working directory and the repository? What value do you think it offers?
