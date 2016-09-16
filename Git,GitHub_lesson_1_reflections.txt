@@ -1,37 +1,3 @@
-
-
-Using 'diff' to demonstrate the difference between two files
-
-In unbuntu and Mac, diff is used to list the differences between two files. 
-In Windows, the corresponding command is FC, which stands for file compare
-
-the syntax for file comaprison in Ubuntu is 
-
-diff -u old_file new_file
-
-remember to navigate to the folder where these files are stored. 
-The -u (unified format) ensures that the output is displayed in the unified format ensuring that the output is displayed in a better format.
-
-
-Git commands
-
-1) Make a copy of an entire Git repository, including the history, onto your own computer.
-git clone will do this. It takes one argument - the url of the repository to copy.
-
-2) Temporarily reset all files in a directory to their state at the time of a specific commit.
-git checkout will do this. It takes one argument - the commit ID to restore.
-
-3) Show the commits made in this repository, starting with the most recent.
-git log will do this. It doesn't take any arguments. (--stat can be used alongwith this command to get additional statistics about the commits)
-
-4) git diff will show the difference between two commits. It takes two arguments; the older commit ID followed by the newer commit ID.
-git diff considers the first argument as the "original", and the second argument as the "new" version.
-To get a coloured output, type git config --global color.ui auto 
-
-5) to set user name: git config --global user.name "user name"; to set email: git config --global user.email "user mailID"
-git config --list to list all the settings Git can find at that point
-
-
 Reflections
 
 1) How does using diff help?
@@ -81,5 +47,47 @@ In Git, one can revert back to any version of the code using the 'checkout' comm
 
 
 7) Now that you have your workspace set up, what do you want to try using Git for?
+
+
+
+
+Git commands
+
+1) Make a copy of an entire Git repository, including the history, onto your own computer.
+git clone will do this. It takes one argument - the url of the repository to copy.
+
+
+2) Temporarily reset all files in a directory to their state at the time of a specific (older) commit.
+git checkout will do this. It takes one argument - the commit ID to restore.
+To revert back to the orignal state (i.e. to the most recent commit), type git checkout master in case you don't have the ID of the most recent commit
+
+3) Show the commits made in this repository, starting with the most recent.
+git log will do this. It doesn't take any arguments. (--stat can be used alongwith this command to get additional statistics about the commits)
+
+
+4) git diff will show the difference between two commits. It takes two arguments; the older commit ID followed by the newer commit ID.
+git diff considers the first argument as the "original", and the second argument as the "new" version.
+To get a coloured output, type git config --global color.ui auto 
+
+
+5) to set user name: git config --global user.name "user name"; to set email: git config --global user.email "user mailID"
+git config --list to list all the settings Git can find at that point
+
+
+Note on diff in non-git environment
+Using 'diff' to demonstrate the difference between two files
+
+In unbuntu and Mac, diff is used to list the differences between two files. 
+In Windows, the corresponding command is FC, which stands for file compare
+
+the syntax for file comaprison in Ubuntu is 
+
+diff -u old_file new_file
+
+remember to navigate to the folder where these files are stored. 
+The -u (unified format) ensures that the output is displayed in the unified format ensuring that the output is displayed in a better format.
+
+
+
 
 
