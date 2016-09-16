@@ -1,3 +1,47 @@
+Reflections
+
+1) What happens when you initialize a repository? Why do you need to do it?
+
+We have a working directory that stores the files that have to be added to the git repository. cd into this working directory and use the 
+command git init to create a git repository. This initializing creates .git file in the working directory. 
+
+
+
+2) How is the staging area different from the working directory and the repository? What value do you think it offers?
+
+Any file is not directly added to the repository. Using the command git add, adds the file to the staging area. This file is added to the repository only after one commits this change. The staging area serves as a checkpoint to verify whether to little or too much information is being modified in a new commit.
+
+
+
+3) How can you use the staging area to make sure you have one commit per logical change?
+
+using git diff --staged shows the difference between files in the staging area and the ones belonging to the latest commit in the repository. The output of this command can be used to verify whether we are making the commit based on one logical change only.
+
+
+
+4) What are some situations when branches would be helpful in keeping your history organized? How would branches help?
+
+A branch can be created while trying out an experimental feature (which may or may not work) in the project without disturbing the existing project in the working condition. 
+A branch can be created in case of collaborations between two or more authors. This would allow the authors to work independently of the master
+branch.
+
+
+
+5) How do the diagrams help you visualize the branch structure?
+
+Diagrams clearly show the relations between commits. They also serve as an indicator of the reachability of a given commit.
+
+
+
+6) What is the result of merging two branches together? Why do we represent it in the diagram the way we do?
+
+Merging two branches is some sort of a union of two different codes. It incorporates the commits on both the branches from their tip points till the point of divergence of the branches. After merging, the branch which was checked out at the time of the merge, continues 
+
+
+
+7) What are the pros and cons of Git’s automatic merging vs. always doing merges manually?
+
+
 
 
 Git commands
@@ -13,12 +57,26 @@ Git commands
 
 3) git commit to create a commit 
 
+4) git diff (without any arguments) to see the changes in files in the working directory and the staging area
+   git diff --staged  to see the changes in files in the staging area and the repository
 
-Reflections
+5) git branch lists the branches in the repository. The default branch is the master.
+  branches are identified by names rather than IDs. To create a new branch use the command git branch user-supplied branch name.
+ then type git checkout the new branch name   to make commits to the new branch
+  
+6) git merge branch1 branch2 to merge two branches. 
+  git merge will also include the currently checked-out branch in the merged version. For this reason, you should always checkout one of the two branches you’re planning on merging before doing the merge. Which one you should check out depends on which branch label you want to point to the new commit. 
+  the order in which they are typed into the command line does not matter. The key is to remember that git merge always merges all the specified branches into the currently checked out branch, creating a new commit for that branch. 
+  Restore your files to their state before you started the merge by running git merge --abort
 
-1) What happens when you initialize a repository? Why do you need to do it?
+7) git show commit ID to see what changes this commit made with respect to its parent. This command becomes necessary when branches are merged. After merging, in the git log, the commits from both the branches are interleaved and ordered according to their timestamp. Thus a commit may not always be preceded by its parent. This git show command displays the difference between its parent and itself automatically without requiring the parent commit ID.
+
+
+8) git branch -d name of branch to be deleted
+  d stands for delete
+ This deletes only the name of the branch as all the commits belonging to this branch have been merged with another branch (usually the master branch). As you might have guessed, it is important to merge the branch before deleting it.
 
 
 
 
-2) How is the staging area different from the working directory and the repository? What value do you think it offers?
+
