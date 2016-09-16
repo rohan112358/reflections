@@ -1,0 +1,21 @@
+Reflections
+
+
+Git commands
+
+1) git remote add origin address of the target repository on Github 
+creates a remote repository (usual practice is to name it origin) which is used to update the target repository on Github
+
+2) git push origin thread name  
+transfer from (to) the local repository (on one's computer) to (from) the Github repository occurs in the form of commits being pushed to (pulled from/ fetched from) the Github repository. Instead of pushing (pulling) commits individually, one can push the thread, which will automatically push all the commits belonging to the thread. For the later instances of pushing this thread, only the newer commits are added
+
+How to push individual commits?
+
+Instructions
+
+Github password caching
+ If you're cloning GitHub repositories using HTTPS, you can use a credential helper to tell Git to remember your GitHub username and password every time it talks to GitHub. Turn on the credential helper so that Git will save your password in memory for some time
+
+ git config --global credential.helper 'cache --timeout=3600'
+ # Set the cache to timeout after 1 hour (setting is in seconds). default timeout is 15 min when not explicitly specified
+
